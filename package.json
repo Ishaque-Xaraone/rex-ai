@@ -1,0 +1,30 @@
+{
+  "name": "rex-ai",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "Shared",
+    "Code-Analyzer",
+    "Backend",
+    "Frontend"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=Backend",
+    "dev:backend": "npm run dev --workspace=Backend",
+    "dev:frontend": "npm run dev --workspace=Frontend",
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "lint": "npm run typecheck",
+    "test": "npm run test --workspaces --if-present",
+    "db:migrate": "npm run db:migrate --workspace=Backend",
+    "db:migrate:down": "npm run db:migrate:down --workspace=Backend",
+    "clean": "npm run clean --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  },
+  "overrides": {
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5"
+  }
+}
